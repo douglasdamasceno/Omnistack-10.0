@@ -1,4 +1,4 @@
-import React ,{useEffect}from 'react';
+import React ,{useEffect,useState}from 'react';
 
 import './global.css'
 import './App.css'
@@ -7,14 +7,13 @@ import './main.css'
 
 
 function App() {
-  const [latitude, setLatitude] = useEffect(''); 
-  const [longitude, setLongitude] = useEffect(''); 
+  const [latitude, setLatitude] = useState(''); 
+  const [longitude, setLongitude] = useState(''); 
   
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition(
       (position)=>{
         const {latitude,longitude} = position.coords;
-        
         setLatitude(latitude);
         setLongitude(longitude);
       },
