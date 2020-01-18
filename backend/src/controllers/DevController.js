@@ -29,5 +29,13 @@ module.exports = {
     async index(req,res){
         const dev = await Dev.find();
         return res.json(dev);
+    },
+    async update(req,res){
+        //name,avatar_url,bio,location,techs
+        const username = req.query;
+        //Dev.update();
+    },
+    async destroy(){
+
     }
 };
